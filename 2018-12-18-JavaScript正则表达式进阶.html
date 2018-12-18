@@ -114,7 +114,7 @@
 <meta property="og:site_name" content="Wangyn">
 <meta property="og:description" content="需求一 支持字符串占位符进行值替换。  123456789101112131415const linkUrl = &apos;wj://special-train?userId=$&amp;#123;userId&amp;#125;&amp;amp;trainId=$&amp;#123;trainId&amp;#125;&apos;;const data = &amp;#123; userId: &apos;1234&apos;, trainId: &apos;abcd&apos;&amp;#125;;cons">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-12-18T15:36:27.359Z">
+<meta property="og:updated_time" content="2018-12-18T15:45:11.328Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript正则表达式进阶">
 <meta name="twitter:description" content="需求一 支持字符串占位符进行值替换。  123456789101112131415const linkUrl = &apos;wj://special-train?userId=$&amp;#123;userId&amp;#125;&amp;amp;trainId=$&amp;#123;trainId&amp;#125;&apos;;const data = &amp;#123; userId: &apos;1234&apos;, trainId: &apos;abcd&apos;&amp;#125;;cons">
@@ -339,7 +339,7 @@
                 
               
 
-              <time title="创建时间：2018-12-18 22:58:47 / 修改时间：23:36:27" itemprop="dateCreated datePublished" datetime="2018-12-18T22:58:47+08:00">2018-12-18</time>
+              <time title="创建时间：2018-12-18 22:58:47 / 修改时间：23:45:11" itemprop="dateCreated datePublished" datetime="2018-12-18T22:58:47+08:00">2018-12-18</time>
             
 
             
@@ -388,6 +388,7 @@
 <p>支持字符串占位符进行值替换。</p>
 </blockquote>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> linkUrl = <span class="string">'wj://special-train?userId=$&#123;userId&#125;&amp;trainId=$&#123;trainId&#125;'</span>;</span><br><span class="line"><span class="keyword">const</span> data = &#123; <span class="attr">userId</span>: <span class="string">'1234'</span>, <span class="attr">trainId</span>: <span class="string">'abcd'</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> replaceSystemPlaceholderValue = <span class="function">(<span class="params">placeholder</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> dataKey = placeholder.replace(<span class="regexp">/\$|&#123;|&#125;/g</span>, <span class="string">''</span>);</span><br><span class="line">  <span class="keyword">return</span> data[dataKey] || placeholder;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> replaceSystemPlaceholderInUrl = <span class="function">(<span class="params">url</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> url.replace(<span class="regexp">/\$&#123;(.+?)&#125;/g</span>, m =&gt; replaceSystemPlaceholderValue(m));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">`url : <span class="subst">$&#123;replaceSystemPlaceholderInUrl(linkUrl)&#125;</span>`</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// output：url: wj://special-train?userId=1234&amp;trainId=abcd</span></span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <h3 id="需求二"><a href="#需求二" class="headerlink" title="需求二"></a>需求二</h3><blockquote>
 <p>获取字符串中非中文字符的出现位置及字符内容。</p>
 </blockquote>
